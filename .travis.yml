@@ -5,6 +5,7 @@ node_js:
 cache: yarn
 install:
   - npm install -g codecov
+  - yarn
 script:
   - npm test
   - codecov
