@@ -1,0 +1,22 @@
+{
+  "name": "apoiase-api",
+  "version": "0.0.1",
+  "description": "Apoia.se API (unnoficial)",
+  "main": "index.js",
+  "repository": "https://github.com/CrochetLand/apoiase-api-nodejs",
+  "author": "CrochetLand",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "axios-cookiejar-support": "^0.4.2",
+    "csv-parse": "^4.4.1",
+    "qs": "^6.7.0",
+    "tough-cookie": "^3.0.1"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
