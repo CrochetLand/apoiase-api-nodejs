@@ -5,3 +5,11 @@ cache: yarn
 after_script:
   - npm install -g codecov
   - codecov
+deploy:
+  provider: npm
+  email: panthro.rafael@gmail.com
+  api_key:
+    secure: PSnA5byNss+jG/C/Gqhn4ghISas3mklODAJXkGZxMATyMabKBVtfChEha7n60uX/MsYqNait2kK/YML1YVFV99dDyHuk9IZxYmQ8gWsiLZ+pHwqSOZqmKUoP3WGYVd2h5utuiLf3TwtXopuoABfcD8AIs2hPpspaEmrBz50S0Lkf9bJvIJqSObO9+Ce6rf7W2QR7pJIwkidPn1yIRm0CrckJQfZJbt0SXbSHFzdrsYR395h+9jvWpHhrULZxdKlg/qJtcGhaDl2UGwybA4w7F2plCdvMCaVHDdp7W4l+jhf2LRzIl/T4Z+5cnexvAKsyS6P/1vAL4ge3rveS01/07JVSIauvNjnLURj//Kf+PTnE+2EqhbaHeuJ5t82VSYumlCY2UsUJMADx0XHEFaYv4qMHyTKVPIZwqIIyorv+SjQx0UHO4PyvXYa/Nume+p+L25QOUNzyfXYI3tn8gLG/z5JGJZvThvz89IvbZg1iKOBbXrmUeVnTkDAqZK0+6hFBeEq9mrV5ppuJd4IkCpca0vWCIz5ncx2V4Z2GqgCEx94ula9SK2bZN88l1tGoUpE1Y5H+r8BtA+Qa0j//48VNthQCHEMwKgFHtFI80Gn0aSiEG4vIG18F0PBRhiaXS0sTfanSFtIU0JrU3y+QGfw9vJbjwHPv0Dz2pTl6garhZ20=
+  on:
+    tags: true
+    repo: CrochetLand/apoiase-api-nodejs
