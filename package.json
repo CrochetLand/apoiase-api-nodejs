@@ -19,7 +19,12 @@
   "scripts": {
     "test": "jest"
   },
+  "engines": {
+    "node": "8"
+  },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   }
 }
