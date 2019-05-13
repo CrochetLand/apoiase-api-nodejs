@@ -12,7 +12,7 @@ API não oficial do apoia.se
     await apoiase.login(email, password);
     
     // The list of backers
-    const backers  = await apoiase.backers().backers;
+    const backers  = (await apoiase.backers()).backers;
     
     // The backers charges
     const charges = await apoiase.charges();
