@@ -1,5 +1,7 @@
 const Apoiase = require('./index');
 
+jest.setTimeout(10000);
+
 const username = process.env.APOIASE_USERNAME, password = process.env.APOIASE_PASSWORD;
 
 
