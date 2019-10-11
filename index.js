@@ -44,6 +44,10 @@ class Apoiase {
         return !!this._me && !!this._dashboardToken;
     }
 
+    get defaultCampaign() {
+        return this.me.campaigns[0]._id;
+    }
+
 
     async login(user, password) {
 
@@ -126,13 +130,11 @@ class Apoiase {
                 throw error;
             }
         }
-
-
     }
 
     async backers() {
         this._checkAuthenticated();
-        const response = await this.dashboardApi.get('/api/reports/backers');
+        const response = await this.dashboardApi.get(`/api/reports/backers/${this.defaultCampaign}`);
         this._logResponse(response);
         return response.data;
     }
@@ -140,7 +142,7 @@ class Apoiase {
 
     async backersCSV() {
         this._checkAuthenticated();
-        const response = await this.dashboardApi.get('/api/reports/backers/csv');
+        const response = await this.dashboardApi.get(`/api/reports/backers/csv/${this.defaultCampaign}`);
         this._logResponse(response);
         return this._parseCsvFromResponse(response);
 
@@ -150,7 +152,7 @@ class Apoiase {
     async charges(date) {
         this._checkAuthenticated();
         date = date || new Date();
-        const response = await this.dashboardApi.get(`/api/reports/charges/${date.getFullYear()}-${date.getMonth() + 1}`);
+        const response = await this.dashboardApi.get(`/api/reports/charges/${this.defaultCampaign}/${date.getFullYear()}-${date.getMonth() + 1}`);
         this._logResponse(response);
         return response.data;
     }
@@ -158,7 +160,7 @@ class Apoiase {
     async chargesCSV(date) {
         this._checkAuthenticated();
         date = date || new Date();
-        const response = await this.dashboardApi.get(`/api/reports/charges/csv/${date.getFullYear()}-${date.getMonth() + 1}`);
+        const response = await this.dashboardApi.get(`/api/reports/charges/csv/${this.defaultCampaign}/${date.getFullYear()}-${date.getMonth() + 1}`);
         this._logResponse(response);
         return this._parseCsvFromResponse(response);
     }
@@ -166,7 +168,7 @@ class Apoiase {
 
     async payouts() {
         this._checkAuthenticated();
-        const response = await this.dashboardApi.get('/api/reports/transferences');
+        const response = await this.dashboardApi.get(`/api/reports/transferences/${this.defaultCampaign}`);
         this._logResponse(response);
         return response.data;
     }
