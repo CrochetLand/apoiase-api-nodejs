@@ -7,7 +7,7 @@
   "author": "CrochetLand",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "axios-cookiejar-support": "^0.4.2",
     "csv-parse": "^4.4.1",
     "qs": "^6.7.0",
