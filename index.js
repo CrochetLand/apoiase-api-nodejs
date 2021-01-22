@@ -3,6 +3,7 @@ const qs = require("qs");
 const axiosCookieJarSupport = require('axios-cookiejar-support').default;
 const {Cookie, CookieJar} = require("tough-cookie");
 const csvParser = require('csv-parse/lib/sync');
+const Jwt = require('jsonwebtoken')
 
 class Apoiase {
 
@@ -41,13 +42,18 @@ class Apoiase {
     }
 
     get authenticated() {
-        return !!this._me && !!this._dashboardToken;
+        return !!this._dashboardToken && (!!this._me || !!this._campaign);
     }
 
     get defaultCampaign() {
-        return this.me.campaigns[0]._id;
+        return this._campaign || this.me.campaigns[0]._id;
     }
 
+    async loginWithToken(bearer) {
+        const jwt = Jwt.decode(bearer)
+        this._dashboardToken = bearer;
+        this._campaign = jwt.campaign;
+    }
 
     async login(user, password) {
 
