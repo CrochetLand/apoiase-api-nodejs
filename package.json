@@ -10,7 +10,7 @@
     "axios": "^0.21.1",
     "axios-cookiejar-support": "^0.4.2",
     "csv-parse": "^4.15.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "qs": "^6.9.6",
     "tough-cookie": "^3.0.1"
   },
